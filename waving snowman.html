@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<!--
+    Inspired by https://www.khanacademy.org/computing/computer-programming/programming/drawing-basics/pc/challenge-waving-snowman
+
+    It sounds like Khan Academy uses Processing.js which is outdated
+
+    This code uses j5.js is is a replacement of Processing.js
+-->
+
+<html>
+    <head>
+        <title>Challenge: Waving snowman</title>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+        <script>
+            function setup() {
+                createCanvas(400, 400);
+            }
+
+            function draw() {
+                background(220);
+                rect(0, 350, 400, 50);
+                ellipse(200, 300, 150, 150);
+                ellipse(200, 200, 100, 100);
+                ellipse(200, 120, 75, 75);
+                line(160, 200, 100, 150);
+                line(240, 200, 300, 150);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Challenge: Waving snowman</h1>
+    </body>
+</html>
