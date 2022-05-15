@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!--
+    Inspired by https://www.khanacademy.org/computing/computer-programming/programming/functions/pt/functions
+
+    It sounds like Khan Academy uses Processing.js which is outdated
+
+    This code uses j5.js is is a replacement of Processing.js
+-->
+
+<html>
+    <head>
+        <title>Winston</title>
+        <script src="p5.min.js"></script>
+        <script>
+            function setup() {
+                createCanvas(400, 400);
+            }
+
+            var winston = function(centerX, centerY, size) {
+                fill(255, 255, 0)
+                circle(centerX, centerY, size);
+                fill(255, 0, 0);
+                ellipse(centerX + 0.1 * size, centerY + 0.15 * size, 0.4 * size); // mouth
+                fill(0, 0, 0);
+                circle(centerX - 0 * size, centerY - 0.3 * size, 0.1 * size); // Left eye
+                circle(centerX - 0.2 * size, centerY - 0.2 * size, 0.1 * size); // Right eye
+            }
+
+            var a = 50;
+            var dir = true;
+
+            function draw() {
+                background(220);
+                winston(200, 200, 200);
+                winston(300, 300, 50);
+                winston(a, 50, 70);
+
+                if (dir) {
+                    if (a >= 350) { dir = false; } else { a = a + 1; }
+                } else {
+                    if (a <= 50) { dir = true; } else { a = a - 1; }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Winston</h1>
+    </body>
+</html>
