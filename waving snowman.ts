@@ -1,11 +1,11 @@
-function setup() {
+function setup(): void {
     createCanvas(400, 400);
 }
 
 var angle = 40;
 var dir = false;
 
-function draw() {
+function draw(): void {
     background(220);
     rect(0, 350, 400, 50);
     ellipse(200, 300, 150, 150);
