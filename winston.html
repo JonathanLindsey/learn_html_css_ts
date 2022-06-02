@@ -37,7 +37,7 @@
                 
                 small_winston_angles = [0, 90, 180, 270];
                 small_winston_angles.forEach(small_winston_angle => {
-                    [x, y] = vectorToXY(200, 200, small_winston_angle + a, 150);
+                    [x, y] = vector_math.vectorToXY(200, 200, small_winston_angle + a, 150);
                     winston(x, y, 70);
                 });
                 
