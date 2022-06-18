@@ -19,12 +19,12 @@ jobs:
     - name: Build the site with parcel
       run: npx parcel build index.html --public-url "https://jonathanlindsey.github.io/learn_html_css_ts/"
     - name: Deploy to GitHub Pages
-      # Getting a this error from GitHub Actions "fatal: could not read Username for 'https://github.com': No such device or address"
+      # Getting this error from GitHub Actions "fatal: could not read Username for 'https://github.com': No such device or address"
       # run: |
       #   git config user.email ""
       #   git config user.name "CI"
       #   npx gh-pages -d dist
-      #
+      
       # This works but don't really want to use an unofficial GitHub Action
       run: |
         uses: JamesIves/github-pages-deploy-action@v4
