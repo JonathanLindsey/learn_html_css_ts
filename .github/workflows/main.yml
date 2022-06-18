@@ -5,6 +5,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+permissions: 
+  contents: write
 
 jobs:
   build:
@@ -24,10 +26,9 @@ jobs:
       #   git config user.email ""
       #   git config user.name "CI"
       #   npx gh-pages -d dist
-      
+
       # This works but don't really want to use an unofficial GitHub Action
-      run: |
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      with:
+        branch: gh-pages
+        folder: dist
