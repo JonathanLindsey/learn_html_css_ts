@@ -11,11 +11,17 @@
 <html>
     <head>
         <title>Winston</title>
+        <style>
+            body {
+                text-align: center;
+                margin: 0%;
+            }
+        </style>
         <script src="p5.min.js"></script>
         <script src="vector_math.ts"></script>
         <script>
             function setup() {
-                createCanvas(400, 400);
+                createCanvas(window.innerWidth, window.innerHeight);
             }
 
             var winston = function(centerX, centerY, size) {
@@ -33,21 +39,28 @@
 
             function draw() {
                 background(220);
-                winston(200, 200, 200);
+                let centerX = width/2;
+                let centerY = height/2;
+                let minDimension = Math.min(width, height);
+                winston(centerX, centerY, minDimension*0.5);
                 
                 small_winston_angles = [0, 90, 180, 270];
                 small_winston_angles.forEach(small_winston_angle => {
-                    [x, y] = vector_math.vectorToXY(200, 200, small_winston_angle + a, 150);
-                    winston(x, y, 70);
+                    [x, y] = vector_math.vectorToXY(centerX, centerY, small_winston_angle + a, minDimension*0.375);
+                    winston(x, y, minDimension*0.175);
                 });
                 
                 
 
                 a -= 1;
             }
+
+            window.addEventListener('resize', function(event) {
+                resizeCanvas(window.innerWidth, window.innerHeight);
+            }, true);
         </script>
     </head>
     <body>
-        <h1>Winston</h1>
+        
     </body>
 </html>
